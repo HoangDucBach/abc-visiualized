@@ -167,10 +167,6 @@ const App: React.FC = () => {
   };
 
   const runABC = () => {
-    if (iteration >= parameters.maxIterations) {
-      setIsRunning(false); // Dừng khi vượt quá số vòng lặp tối đa
-      return;
-    }
     employedBeePhase();
     onlookerBeePhase();
     scoutBeePhase();
@@ -211,7 +207,7 @@ const App: React.FC = () => {
   }, [iteration, foodSources]);
 
   const toggleSimulation = () => {
-    if (isPlayFirst) {
+    if(isPlayFirst) {
       setIsPlayFirst(false);
     }
     setIsRunning((prev) => !prev);
